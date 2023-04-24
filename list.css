@@ -1,0 +1,38 @@
+#todo-list {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  li .item {
+    flex-grow: 1;
+  }
+  
+  li button {
+    margin-left: 10px;
+  }
+
+  body {
+    background-image: url('https://www.shutterstock.com/blog/wp-content/uploads/sites/5/2020/07/Featured-Image-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
