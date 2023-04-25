@@ -50,8 +50,8 @@ function loadItems() {
     e.parentElement.childNodes[1].innerHTML = update
 
 // Store the updated data back into local storage
-localStorage.setItem('items', JSON.stringify(update));
-saveItems()
+    localStorage.setItem('items', JSON.stringify(update));
+    saveItems()
    }
 
   
