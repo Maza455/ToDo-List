@@ -4,24 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href ="./list.css"/>
+    <link rel="stylesheet" href="./list.css"/>
     <title>Champions</title>
 </head>
 <body>
     <div id="todo-list">
-        <h1><u><b>Daily TaskeR...</b></u></h1>
-        <li>
-        <form id="form">
-          <input type="text" id="input" placeholder="Add new item..." style="height:50px; width:400px" />
-          <button id="add-btn" type="submit" style="height:50px; width:50px">Add</button>
-          </li>
-          
-          <ul id="list"></ul>
+    <h1><u><b>Daily TaskeR...</b></u></h1>
 
-        </form>
-      </div>
+    <!-- Current Date and Time Display -->
+    <div id="current-time" class="topcorner"></div>
+
+    <!-- Form for adding tasks -->
+    <form id="form">
+        <li>
+            <input type="text" id="input" placeholder="Add new item..." />
+            <select id="day-select">
+                <option value="">Select Day</option>
+                <option value="monday">Monday</option>
+                <option value="tuesday">Tuesday</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="thursday">Thursday</option>
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+            </select>
+            <select id="time-select">
+              <option value="">Select Time</option>
+              <option value="10800">3 Hours</option>
+              <option value="3600">1 Hour</option> <!-- 3600 seconds -->
+              <option value="1800">30 Minutes</option> <!-- 1800 seconds -->
+              <option value="900">15 Minutes</option> <!-- 900 seconds -->
+              <option value="300">5 Minutes</option>
+              <option value="60">1 Minute</option>
+          </select>
+            <button id="add-btn" type="submit">Add</button>
+        </li>
+    </form>
+
+    <!-- List of tasks -->
+    <ul id="list"></ul>
+
+    <!-- Toggle button for completed tasks -->
+    <button id="toggle-history-btn">Show Completed Tasks</button>
+
+    <!-- History of completed tasks -->
+    <h2>Completed Tasks:</h2>
+    <ul id="history-list" style="display: none;"></ul> <!-- Hidden by default -->
+</div>
 
     <script src="list.js"></script>
 </body>
-</html
-
+</html>

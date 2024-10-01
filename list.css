@@ -1,142 +1,116 @@
-#todo-list {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  li .item {
-    flex-grow: 1;
-  }
-  
-  li button {
-    margin-left: 10px;
-  }
-
-  body {
-    background-image: url('https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-
-  /* The main container of the Todo List */
-.todo-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 30px;
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
-/* The form to add a new task */
-.todo-form {
+/* Main container of the Todo List */
+#todo-list {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Form styles */
+form {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.todo-input {
-  width: 300px;
-  height: 30px;
+input[type="text"], select {
+  width: calc(33% - 10px); /* Adjust width for spacing */
+  height: 40px;
   padding: 5px;
-  margin-right: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
-.todo-submit {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 7px 14px;
-  border-radius: 3px;
-  font-size: 16px;
-  cursor: pointer;
+button {
+  height: 40px; 
+  padding: 0 15px; 
+  background-color: #007bff; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+}
+
+button:hover {
+ background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* The list of tasks */
-.todo-list-items {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 300px;
+ul {
+  list-style-type: none; 
+  padding-left: 0; 
 }
 
-.todo-list-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f7f7f7;
-  border-radius: 3px;
+li {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 10px; 
+  margin-bottom: 10px; 
+  background-color: #f7f7f7; 
+  border-radius: 5px; 
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.todo-list-item p {
-  margin: 0;
+li .item {
+ flex-grow: 1; /* Allow item text to take available space */
+ font-size: 16px;
+ color: #333;
+}
+
+li button {
+ margin-left: 10px; 
+ background-color: indigo; /* Green for edit and start buttons */
+ color: white; 
+ border-radius: 3px; 
+ padding: 5px 10px; 
+ border:none; 
+}
+
+li button.edit {
+ background-color: violet; /* Yellow for edit button */
+}
+
+li button.delete {
+ background-color: #dc3545; /* Red for delete button */
+}
+
+li button:hover {
+ opacity: .8; /* Slightly transparent on hover */
+}
+
+/* Timer display styles */
+.timer-display {
+ font-weight:bold;
+ color:#d9534f; /* Bootstrap danger color for visibility */
+}
+
+.topcorner {
+  position: absolute;
+  top: 10px;
+  right: 20px;
   font-size: 16px;
-}
-
-.todo-list-item-buttons {
-  display: flex;
-  align-items: center;
-}
-
-.todo-list-item-button {
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  margin-right: 5px;
-  border-radius: 3px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.todo-list-item-button:hover {
-  background-color: #0069d9;
-}
-
-.todo-list-item-edit-input {
-  width: 200px;
-  height: 30px;
-  padding: 5px;
-  margin-right: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-}
-
-.todo-list-item-edit-submit {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 3px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.todo-list-item-edit-submit:hover {
-  background-color: #218838;
+  color: #333;
+  /* display: block; */
+  font-weight: bold;
 }
