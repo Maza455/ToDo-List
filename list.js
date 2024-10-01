@@ -3,16 +3,17 @@ const input = document.getElementById('input');
 const daySelect = document.getElementById('day-select');
 const timeSelect = document.getElementById('time-select');
 const list = document.getElementById('list');
-const historyList = document.getElementById('history-list'); // New history list element
-const toggleHistoryBtn = document.getElementById('toggle-history-btn'); // Toggle button
+const historyList = document.getElementById('history-list');
+const toggleHistoryBtn = document.getElementById('toggle-history-btn');
 
-let activeTask = null; // Track the currently active task
-let historyOfTheDay = []; // Store completed tasks
+// Track the currently active task and store it to an array
+let activeTask = null; 
+let historyOfTheDay = [];
 
 // Get current day of the week
 function getCurrentDay() {
     const now = new Date();
-    return now.toLocaleString('en-US', { weekday: 'long' }).toLowerCase(); // e.g., 'tuesday'
+    return now.toLocaleString('en-US', { weekday: 'long' }).toLowerCase();
 }
 
 // Function to display current date and time
@@ -46,7 +47,7 @@ form.addEventListener('submit', (e) => {
         addItem(`${item} - ${day.charAt(0).toUpperCase() + day.slice(1)}`, time);
         input.value = '';
         daySelect.selectedIndex = 0;
-        timeSelect.selectedIndex = 0; // Reset dropdown
+        timeSelect.selectedIndex = 0;
     } else {
         alert("Please enter a task, select a day, and choose a time.");
     }
@@ -86,29 +87,30 @@ function startTimer(e, totalTime) {
         return;
     }
 
-    activeTask = e.parentElement; // Set the current task as active
+     // Set the current task as active
+    activeTask = e.parentElement;
     const itemText = activeTask.querySelector('.item').textContent;
 
-    let timeLeft = totalTime; // Total time in seconds
+    let timeLeft = totalTime;
     const interval = setInterval(() => {
         if (timeLeft <= 0) {
             clearInterval(interval);
             alert(`Time's up for "${itemText.split('-')[0]}".`);
-            historyOfTheDay.push(itemText); // Store completed task
-            updateHistory(); // Update history display
-            activeTask = null; // Reset active task
+            historyOfTheDay.push(itemText);
+            updateHistory();
+            activeTask = null;
             return;
         }
         
         timeLeft--;
         activeTask.querySelector('.item').textContent = `${itemText.split('-')[0]} - ${timeLeft} sec`;
         
-        saveItems(); // Save updated time in local storage
-    }, 1000); // Decrement every second
+        saveItems();
+    }, 1000);
 }
 
 function updateHistory() {
-    historyList.innerHTML = ''; // Clear current history display
+    historyList.innerHTML = '';
     historyOfTheDay.forEach(task => {
         const li = document.createElement('li');
         

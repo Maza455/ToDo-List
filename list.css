@@ -14,7 +14,7 @@ body {
   margin: 30px auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -33,7 +33,7 @@ form {
 }
 
 input[type="text"], select {
-  width: calc(33% - 10px); /* Adjust width for spacing */
+  width: calc(33% - 10px);
   height: 40px;
   padding: 5px;
   font-size: 16px;
@@ -52,7 +52,7 @@ button {
 }
 
 button:hover {
- background-color: #0056b3; /* Darker blue on hover */
+ background-color: #0056b3;
 }
 
 /* The list of tasks */
@@ -73,14 +73,14 @@ li {
 }
 
 li .item {
- flex-grow: 1; /* Allow item text to take available space */
+ flex-grow: 1;
  font-size: 16px;
  color: #333;
 }
 
 li button {
  margin-left: 10px; 
- background-color: indigo; /* Green for edit and start buttons */
+ background-color: indigo;
  color: white; 
  border-radius: 3px; 
  padding: 5px 10px; 
@@ -88,21 +88,21 @@ li button {
 }
 
 li button.edit {
- background-color: violet; /* Yellow for edit button */
+ background-color: violet;
 }
 
 li button.delete {
- background-color: #dc3545; /* Red for delete button */
+ background-color: #dc3545;
 }
 
 li button:hover {
- opacity: .8; /* Slightly transparent on hover */
+ opacity: .8;
 }
 
 /* Timer display styles */
 .timer-display {
  font-weight:bold;
- color:#d9534f; /* Bootstrap danger color for visibility */
+ color:#d9534f;
 }
 
 .topcorner {
@@ -113,4 +113,40 @@ li button:hover {
   color: #333;
   /* display: block; */
   font-weight: bold;
+}
+
+/* Mobile Styles */
+@media (max-width: 600px) {
+  #todo-list {
+      width: calc(100% - 40px);
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      box-shadow:none; 
+      border-radius:none;
+   }
+
+   h1 {
+       font-size:24px;
+   }
+
+   input[type="text"], select, button {
+       font-size:14px;
+   }
+}
+
+/* Tablet Styles */
+@media (min-width: 601px) and (max-width: 900px) {
+   #todo-list {
+       width : calc(100% -40 px);
+   }
+
+   h1 {
+       font-size :26 px ;
+   }
+
+   input[type="text"], select, button {
+       font-size :16 px ;
+   }
 }
